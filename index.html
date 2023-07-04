@@ -2,7 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Webcam Image Classification using a pre-trained customized model and p5.js</title>
+  <title>Smarter fridges</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js" type="text/javascript"></script>
@@ -11,32 +11,69 @@
 <body style="background-color: #80B0B2;">
  
         <div>
-            <img src="./logo2.png" alt="logo">
+            <img src="./flapspy/logo2.png" alt="logo">
+            <style>
+              .table {
+                border: 1px solid white;
+                border-collapse: collapse;
+                background-color: #1D7DA7
+              }
+            </style>
+            <div style="display: inline block">
+            <table class="table">
+              <tr>
+                <th>left flap</th>
+                <th>center flap</th>
+                <th>right flap</th>
+              </tr>
+              <tr>
+                <td><a href="./flapspy/left.py">
+                  <button>open</button>
+                  </a>
+                  </td>
+                <td><a href="./flapspy/center.py">
+                  <button>open</button>
+                  </a>
+                  </td>
+                <td><a href="./flapspy/right.py">
+                  <button>open</button>
+                  </a>
+                  </td>
+              </tr>
+            </table>
+            </div>
         <p id="demo"></p> 
         
         <form>
         <div class="center">
             <label for="date">Use By Date</label>
-            <input type="date" id="date">
+            <input type="date" id="date" name="date" value="date">
         </div>
             <div class="center">
                     <label for="yogurt">Yogurt</label>
-                    <input type="radio" id="yogurt">
+                    <input type="radio" id="yogurt" name="item" value="yogurt">
                     <label for="eggs">Eggs</label>
-                    <input type="radio" id="eggs">
+                    <input type="radio" id="eggs" name="item" value="eggs">
               <label for="vegemite">Vegemite</label>
-              <input type="radio" id="vegemite">
+              <input type="radio" id="vegemite" name="item" value="vegemite">
 
                 </div>
                 <div class="center">
-                    <input type="submit">
+                    <input type="submit" name="item">
                 </div>
     </form>
         <script>
         const d = new Date();
+        const h = new Date()
         document.getElementById("demo").innerHTML = d;
+        document.getElementById("day").innerHTML = h.getDate();
         </script>
   <script src="sketch.js"></script>
+  <script>
+    if (label == eggs && date == day - 2) {
+    console.log("yogurt is out of date")
+}
+  </script>
 </body>
 
 </html>
