@@ -9,10 +9,10 @@
 </head>
 
 <body style="background-color: #80B0B2;">
- 
+        <script src="sketch.js"></script>
  
         <div class="center">
-            <img src="./flapspy/logo2.png" alt="logo">
+            <img src="./Smarter_Fridges_Screen_Saver_-_Made_with_Clipchamp.gif" alt="logo">
         </div>
             <style>
               .table {
@@ -29,6 +29,17 @@
                 align-items: center;
                 margin: auto;
                 text-align: center; 
+                font-size: 30;
+              }
+              .submit {
+                align-content: center;
+                align-items: center;
+                margin: auto;
+                text-align: center; 
+                font-size: 30;
+                font-color: red;
+                height: 10;
+                width: 20;
               }
   </style>
             <div class="center">
@@ -51,6 +62,14 @@
                   <button>open</button>
                   </a>
                   </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>
+                  <a>
+                    <button>close</button>
+                  </a>
+                </td>
               </tr>
             </table>
             </div>
@@ -80,17 +99,32 @@
               <br>
               <br>
                 </div>
-                <div class="center">
-                    <input type="submit" name="item">
+                <div class="submit">
+                    <input type="submit" name="item" onsubmit="date(True)">
                 </div>
     </form>
         <script>
         const d = new Date();
         const h = new Date()
         document.getElementById("demo").innerHTML = d;
-        document.getElementById("day").innerHTML = h.getDate();
-        </script>
-  <script src="sketch.js"></script>
+</script>
+        <script>
+const day = new Date().getDate(); 
+let greeting;
+
+function date(yes) {
+while True{
+if (day > 12) {
+  alert ("Item is nearing used by date");
+}
+}
+}
+
+
+
+document.getElementById("day").innerHTML = greeting;
+</script>
+
 </body>
 
 </html>
