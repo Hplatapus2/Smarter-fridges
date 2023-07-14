@@ -1,9 +1,5 @@
+root@test:/var/www/html# cat testscript/testexec.php
 <?php
-if ($_GET['run']) {
-  # This code will run if ?run=true is set.
-  exec("/home/hudsonfoster25/Documents/flaps.py/cmdprmt_servo/centerdown.sh");
-}
+shell_exec("/home/hudsonfoster25/Documents/flaps.py/cmdprmt_servo/centerdown");
+header('Location: http://192.168.1.222/testscript/index.html?success=true');
 ?>
-
-<!-- This link will add ?run=true to your URL, myfilename.php?run=true -->
-<a href="?run=true">Click Me!</a>
